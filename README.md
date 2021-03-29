@@ -1,11 +1,11 @@
 # Smart Testmanent
 
-###Problem
+### Problem
 In case of traditional financial institutions like banks there are regulations in place to ensure that in case a person dies, their assets are distributed among family or beneficiaries mentioned in testator's last will.
 
 With blockchain-related technologies slowly going mainstream, a growing number of people now have substantial value locked in crypto assets. While regulated centralized exchanges might fall under local laws related to inheritance, in case of private wallets there is no easy way of making sure that one's crypto holdings will be transferred to a person of their choosing in case they die.
 
-###Solution
+### Solution
 With smart contracts we can programmatically ensure that tokens stored in the smart contract will be automatically released if some conditions are met. While there is currently no foolproof way of determining if a person is alive, we can use a mechanism called a dead man's switch. The mechanism of action is as follows:
 1. Testator transfers his funds to the smart contract
 2. At any point the testator may request a withdrawal back to the wallet used to fund it
