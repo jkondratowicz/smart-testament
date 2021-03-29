@@ -11,7 +11,7 @@ With smart contracts we can programmatically ensure that tokens stored in the sm
 2. At any point the testator may request a withdrawal back to the wallet used to fund it
 3. The smart contract checks in regular intervals what is the most recent activity on testator's social media accounts
 4. In case testator has not been active for a period exceeding what's expected, he's assumed dead
-5. Funds are automatically released - either transferred, or a withdrawal action is allowed from the address chosen as benefactor by the testator
+5. Funds are automatically released - either transferred, or a withdrawal action is allowed from the address chosen as beneficiary by the testator
 
 The whole logic is executed by a smart contract on Ethereum network. Step (3) uses a custom ChainLink external adapter to call social media API to check for user's latest activity.
 
