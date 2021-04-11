@@ -19,6 +19,11 @@ With smart contracts we can programmatically ensure that tokens stored in the sm
 
 The whole logic is executed by a smart contract on Ethereum network. Step (3) uses a custom ChainLink external adapter to call social media API to check for user's latest activity.
 
+### Project structure
+- `contracts/SmartTestament.sol` - main smart contract
+- `twitter_adapter/` - external adapter that needs to be run separately
+- `frontend/` - UI for using metamask to deposit etc. (TODO)
+
 ### To do:
 
 - contract tests
