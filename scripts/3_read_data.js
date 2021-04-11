@@ -1,5 +1,7 @@
+const { prompt } = require('enquirer');
 const SmartTestament = artifacts.require('SmartTestament');
 require('dotenv').config();
+let username = process.env.TWITTER_USERNAME;
 /*
   This script requests data
 */
@@ -9,12 +11,28 @@ module.exports = async (callback) => {
   const networkType = await web3.eth.net.getNetworkType();
 
   if (networkType !== 'kovan') {
-    console.log('Only works on Kovan network');
+    callback('Only works on Kovan network');
     return;
   }
 
-  console.log('Reading data from Kovan');
+  if (!username) {
+    console.log('No twitter username provided in env var.');
+    const answer = await prompt({
+      type: 'input',
+      name: 'username',
+      message: 'Type in twitter username to check?'
+    });
+    if (!answer.username || answer.username.length < 3) {
+      callback('At least 3 characters required');
+      return;
+    }
+    username = answer.username;
+  }
 
-  const data = await smartTestament.data.call();
-  callback(data);
+  console.log('Getting data on Kovan:');
+  console.log('    username = ' + username);
+
+  const result = await smartTestament.getDaysSinceLastTweet(username);
+
+  callback(result.toString());
 };

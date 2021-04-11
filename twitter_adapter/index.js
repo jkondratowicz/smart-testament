@@ -31,9 +31,7 @@ const createRequest = (input, callback) => {
         const tweet = response.data[0];
         response.data = {
           tweet,
-          result:
-            moment().diff(moment(new Date(tweet['created_at'])), 'days') ||
-            100 * 365,
+          result: moment().diff(moment(new Date(tweet['created_at'])), 'days'),
         };
       }
       callback(response.status, Requester.success(jobRunID, response));

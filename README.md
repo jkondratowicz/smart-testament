@@ -17,3 +17,8 @@ The whole logic is executed by a smart contract on Ethereum network. Step (3) us
 
 ### Note
 This is going to be a submission for ChainLink 2021 Hackathon. I **hope** to have a proof of concept ready before deadline.
+
+### TODO
+- contract tests
+- add UI
+- instead of public function callable by owner, use Chainlink Alarm Clock or maybe Keeper (?) to periodically check status

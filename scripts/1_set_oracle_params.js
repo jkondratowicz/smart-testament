@@ -11,7 +11,7 @@ module.exports = async (callback) => {
   const networkType = await web3.eth.net.getNetworkType();
 
   if (networkType !== 'kovan') {
-    console.log('Only works on Kovan network');
+    callback('Only works on Kovan network');
     return;
   }
 
